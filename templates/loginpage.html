@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}" />
+    <script src="{{ url_for('static',filename='javascript/jsc.js')}}"></script>
+    <script src="jsc.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <p>Inventory Management System</p>
+      </div>
+      <div class="form">
+    <h1 style="width:20px;">Login</h1>
+    <form action="/login" method="post" class="input-boxes">
+      <label>Username:</label>
+      <input type="text" name="username"><br>
+      <label>Password:</label>
+      <input type="password" name="password"><br>
+      {% if errors %}
+        <h1 style="margin: 20px; color: #ff0000;">{{ errors }}!</h1>
+      {% endif %}
+      <input type="submit" value="Login" class="button">
+    </form>
+  </div>
+  </div>
+  </body>
+</html>

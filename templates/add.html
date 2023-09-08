@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Inventory Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}" />
+  <link rel="stylesheet" href="../style/style.css" />
+  <script src="{{ url_for('static',filename='javascript/jsc.js')}}"></script>
+  <script src="../working/working.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- <h1>Inventory Management System</h1> -->
+    <div class="heading">
+      <p>Inventory Management System</p>
+    </div>
+    <div class="form" align="center">
+      <form action="http://127.0.0.1:5000/add_product" id="product_form" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <select onchange="show_features()" id="add_product_option">
+            <option value="">Select Method To Add Product</option>
+            <option value="manual">Add Product Manually</option>
+            <option value="image">Add Product by Image</option>
+          </select>
+        </div>
+        <br>
+        <div class="input-boxes">
+          <div class="lebels">
+            <label for="image" id="image_l" style="display: none">Barcode for Serial No</label>
+            <label for="serial" id="serial_l" style="display: none; float: left">Serial No</label>
+            <label for="product_name" id="product_name_l" style="display: none; float: left">Product Name</label>
+            <label for="price" id="price_l" style="display: none; float: left">Price</label>
+          </div>
+          <div class="boxs">
+            <input type="file" id="image" name="image" accept="image/*" style="display: none; " />
+            <input type="text" id="serial" name="serial" placeholder="Serial No" style="display: none" />
+            <input type="text" id="product_name" name="product_name" placeholder="Product Name" style="display: none" />
+            <input type="number" id="price" name="price" step="0.1" placeholder="Price" style="display: none" />
+
+  
+          </div>
+
+
+
+        </div>
+        <br>
+        <div class="control" align="center">
+          <!-- <input type="submit" class="add-product-btn" id="add_product_btn" value="Add Product" style="display: none" /> -->
+          <input type="submit" class="button" id="add_product_btn" value="Add Product" style="display: none" />
+          <a href="/inventory">
+            <input type="button" class="button" id="view_inventory" value="View Inventory" style="display: block;" />
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+    <div id="message"></div>
+  </div>
+
+  <!-- Initialize the image upload widget
+var imageUploadWidget = new ImageUploadWidget(); -->
+</body>
+
+</html>

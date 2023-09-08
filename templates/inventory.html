@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <script src="{{ url_for('static',filename='javascript/jsc.js')}}"></script>
+    <script src="../working/working.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <h1>Inventory Management System</h1> -->
+        <div class="heading">
+            <p>Inventory Management System</p>
+        </div>
+        
+        <div class="inventory">
+            
+            {% for row in prd_data %}
+                <a href={{ "/inventory/"~row[0] }}>
+                <div class ="product">
+                    <h3>Product Name:{{ row[0] }}</h3>
+                    <h4>Price:{{ row[1] }} </h4>
+                    <h4>Quantity:{{ row[2] }}</h4>
+                </div>
+                </a>
+            {% endfor %}
+
+            
+        </div>
+        <div class ="inventory">
+            <form action="/add" class="input-boxes" style="margin-top: -20px;" >
+                <input class="button" type="submit" value="Add">
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
